@@ -1,0 +1,33 @@
+// for dev only:
+// small tag indication of current active media query
+#bpTags{
+ li{
+  list-style-type: none;
+  padding: 0.4em;
+  font-size:0.5em;
+  position: fixed;
+  bottom:20px;
+  left:20px;
+  z-index:5000;
+  background-color:#000;
+  color:#fff;
+  &.s{
+      display: block;
+      @include respond-to(large){display:none;}
+      @include respond-to(medium){display:none;}
+      @include respond-to(small){display:block;}
+  }
+  &.m{
+      display: block;
+      @include respond-to(large){display:none;}
+      @include respond-to(medium){display:block;}
+      @include respond-to(small){display:none;}
+  }
+  &.l{
+      display: block;
+      @include respond-to(large){display: block;}
+      @include respond-to(medium){display: none;}
+      @include respond-to(small){display: none;}
+  }
+ }
+}
